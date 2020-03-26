@@ -12,7 +12,7 @@ def read_data(collection_name):## อ่านข้้อมูลจาก Dat
         keyword_data = all_data['keyword']
         intent_data = all_data['intent']
         compare_text.append(keyword_data)
-        sentiment_text.append(intent_data)
+        intent_text.append(intent_data)
      return compare_text,  intent_text
 
 def send_data(collection_name,data):## collection ที่ต้องการส่ง และข้อมูล
