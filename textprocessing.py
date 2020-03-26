@@ -13,7 +13,7 @@ def find_distance(input_keyword):
     for compare_keyword in keyword_list:
         distance = sd.levenshtein_norm(input_keyword,compare_keyword)
         distance_list.append(distance)
-    neartest_idx = np.armin(distance_list)
+    neartest_idx = np.argmin(distance_list)
     distance_value = min(distance_list)
 
     if distance_value > theshold:
@@ -23,7 +23,7 @@ def find_distance(input_keyword):
         log = write_log(timenow,input_keyword,predicted_answer,distance_value)
         send_data('chatlog',log)
         return  predicted_answer 
-        
+
     elif distance_value<=theshold:
         predicted_answer = intent_list[neartest_idx]  
         write_log(timenow,input_keyword,predicted_answer,distance_value)
