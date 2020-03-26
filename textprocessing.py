@@ -20,14 +20,14 @@ def find_distance(input_keyword):
         predicted_answer = 'ไม่เข้าใจครับ'
         untrain =write_untrain(timenow,input_keyword,predicted_answer,distance_value)
         send_data('untraindata',untrain)
-        log = write_log(timenow,input_keyword,predicted_answer,distance_value)
-        send_data('chatlog',log)
+        log_data = write_log(timenow,input_keyword,predicted_answer,distance_value)
+        send_data('chatlog', log_data )
         return  predicted_answer 
 
     elif distance_value<=theshold:
         predicted_answer = intent_list[neartest_idx]  
-        write_log(timenow,input_keyword,predicted_answer,distance_value)
-        send_data('chatlog',log)
+        log_data =write_log(timenow,input_keyword,predicted_answer,distance_value)
+        send_data('chatlog', log_data)
         return  predicted_answer 
 
     
