@@ -9,7 +9,7 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
-
+from textprocessing import find_distance
 app = Flask(__name__)
 
 line_bot_api = LineBotApi('6ZiODgd7zsp3v9Pn4fYiLIPE6Zu+EeVUpUfgae3MyuFuDaPNVo3e7ZHLfzLnk68Zw0YRhSYVN8SybOo/DuVdEmAPaLbQaKoIdqNCrLXNIlzC9mylS1UgrBgvDdY0hMv1OAlSp4JX1osyotbWwE2i1AdB04t89/1O/w1cDnyilFU=')
@@ -37,9 +37,10 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    reply_msg = find_distance(event)
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text))
+        TextSendMessage(text=reply_msg))
 
 
 if __name__ == "__main__":
