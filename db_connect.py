@@ -9,8 +9,8 @@ def read_data(collection_name):## อ่านข้้อมูลจาก Dat
      sentiment_text=[] # สร้าง list ไว้เปรียบเทียบ
      my_collection = chatbot_db[collection_name] #เรียก coloection 
      for all_data in my_collection.find(): #เรียก data ทั้ง db
-        sentiment_data = all_data['sentiment']
-        intent_data = all_data['Inetent']
+        keyword_data = all_data['keyword']
+        intent_data = all_data['intent']
         compare_text.append(intent_data)
         sentiment_text.append(sentiment_data)
      return compare_text, sentiment_text
