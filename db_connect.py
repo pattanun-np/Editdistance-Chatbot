@@ -11,9 +11,9 @@ def read_data(collection_name):## อ่านข้้อมูลจาก Dat
      for all_data in my_collection.find(): #เรียก data ทั้ง db
         keyword_data = all_data['keyword']
         intent_data = all_data['intent']
-        compare_text.append(intent_data)
-        sentiment_text.append(sentiment_data)
-     return compare_text, sentiment_text
+        compare_text.append(keyword_data)
+        sentiment_text.append(intent_data)
+     return compare_text,  intent_data
 
 def send_data(collection_name,data):## collection ที่ต้องการส่ง และข้อมูล
     my_collection = chatbot_db[collection_name] #เรียก coloection 
