@@ -12,8 +12,8 @@ from linebot.models import (
 from textprocessing import find_distance
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('6ZiODgd7zsp3v9Pn4fYiLIPE6Zu+EeVUpUfgae3MyuFuDaPNVo3e7ZHLfzLnk68Zw0YRhSYVN8SybOo/DuVdEmAPaLbQaKoIdqNCrLXNIlzC9mylS1UgrBgvDdY0hMv1OAlSp4JX1osyotbWwE2i1AdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('f2337591beeb37fbec2c0ff9bca05801')
+line_bot_api = LineBotApi('acesstoken')
+handler = WebhookHandler('secret key')
 
 
 @app.route("/webhook", methods=['POST'])
