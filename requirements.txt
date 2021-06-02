@@ -17,5 +17,5 @@ pytzdata==2019.3
 requests==2.23.0
 six==1.14.0
 StringDist==1.0.9
-urllib3==1.25.8
+urllib3==1.26.5
 Werkzeug==1.0.0
